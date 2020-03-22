@@ -42,8 +42,11 @@ module.exports = {
     "@nuxtjs/axios",
     "@nuxtjs/auth"
   ],
-  router: {
-    middleware: ["auth"]
+  /*
+   ** Axios
+   */
+  axios: {
+    baseURL: "https://www.codeontheroad.io" //DEBUG
   },
   /*
    ** Auth
