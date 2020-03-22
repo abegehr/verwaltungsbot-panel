@@ -2,6 +2,7 @@
   <section class="section">
     <Login v-if="!$auth.loggedIn" />
     <div v-if="$auth.loggedIn">
+      <b-loading :active.sync="loading" />
       <Card
         v-for="item in items"
         :key="item.id"
@@ -34,6 +35,7 @@ export default {
   },
   data() {
     return {
+      loading: true,
       items: []
     };
   },
@@ -41,10 +43,15 @@ export default {
     this.fetchItems();
   },
   methods: {
-    fetchItems: function() {
-      this.$axios.get("/answers").then(res => {
+    fetchItems: async function() {
+      console.log("fetchItems – called");
+
+      try {
         const items = {};
         const answers = {};
+
+        const res = await this.$axios.get("/answers");
+        console.log("fetchItems – res: ", res);
 
         res.data.forEach(item => {
           answers[item.question_id] = item.answer_text;
@@ -59,7 +66,10 @@ export default {
         });
 
         this.items = items;
-      });
+        this.loading = false;
+      } catch (err) {
+        console.log("fetchItems – Error: ", err);
+      }
     }
   }
 };
