@@ -7,7 +7,28 @@
     >
       <div class="navbar-brand">
         <a class="navbar-item" href="/">#WirVsVirus Verwaltungsbot Panel</a>
-        <b-button v-if="$auth.loggedIn" @click="userLogout">Logout</b-button>
+
+        <a
+          role="button"
+          class="navbar-burger burger"
+          aria-label="menu"
+          aria-expanded="false"
+          data-target="navbarMEnu"
+        >
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarMenu" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <b-button v-if="$auth.loggedIn" @click="userLogout"
+              >Logout</b-button
+            >
+          </div>
+        </div>
       </div>
     </nav>
 
