@@ -5,7 +5,7 @@
       <Card
         v-for="item in items"
         :key="item.id"
-        :id="item.id"
+        :qid="item.qid"
         :question="item.question"
         :answer="item.answer"
       />
@@ -52,11 +52,11 @@ export default {
             answers[item.question_id] = item.answer_text;
           });
 
-        Object.keys(questions).forEach(id => {
-          items[id] = {
-            id: id,
-            question: questions[id],
-            answer: answers[id] || ""
+        Object.keys(questions).forEach(qid => {
+          items[qid] = {
+            qid: qid,
+            question: questions[qid],
+            answer: answers[qid] || ""
           };
         });
 

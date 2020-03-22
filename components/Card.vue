@@ -19,7 +19,7 @@
 <script>
 export default {
   props: {
-    id: {
+    qid: {
       type: String,
       required: true
     },
