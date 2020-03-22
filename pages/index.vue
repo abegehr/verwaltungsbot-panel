@@ -5,7 +5,8 @@
       <b-loading :active.sync="loading" />
       <Card
         v-for="item in items"
-        :key="item.id"
+        :key="item.qid"
+        :id="item.id"
         :qid="item.qid"
         :question="item.question"
         :answer="item.answer"
@@ -54,14 +55,19 @@ export default {
         console.log("fetchItems – res: ", res);
 
         res.data.forEach(item => {
-          answers[item.question_id] = item.answer_text;
+          answers[item.question_id] = {
+            id: item.id,
+            text: item.answer_text
+          };
         });
 
         Object.keys(questions).forEach(qid => {
+          const answer = answers[qid] || {};
           items[qid] = {
+            id: answer.id || null,
             qid: qid,
             question: questions[qid],
-            answer: answers[qid] || ""
+            answer: answer.text || ""
           };
         });
 
