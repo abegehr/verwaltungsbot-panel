@@ -1,16 +1,11 @@
 <template>
   <div class="level box">
-    <div class="level-left" style="width: 240px;">
+    <div class="level-left" style="flex: 1;">
       <p class="">Frage: {{ question }}</p>
     </div>
-    <div class="level-right column flex-end">
+    <div class="level-right column flex-end" style="flex: 2;">
       <b-field horizontal label="Antwort">
-        <b-input
-          style="flex-grow: 1;"
-          type="textarea"
-          v-model="answer"
-          :disabled="!editing"
-        />
+        <b-input type="textarea" v-model="answer" :disabled="!editing" />
       </b-field>
       <div>
         <b-button class="is-pulled-right" @click="click">{{
