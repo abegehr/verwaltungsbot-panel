@@ -1,7 +1,7 @@
 <template>
   <div class="level box">
     <div class="level-left" style="flex: 1;">
-      <p class="">Frage: {{ question }}</p>
+      <p>{{ question }}</p>
     </div>
     <div class="level-right column flex-end" style="flex: 2;">
       <b-field horizontal label="Antwort">

@@ -18,9 +18,12 @@ import Login from "~/components/Login";
 import Card from "~/components/Card";
 
 const questions = {
-  verunsicherter_buerger: "Ich bin verunsichert. Was nun?",
-  gastro_betrieb: "Ich habe einen Gastro Betrieb. Was nun?",
-  corona_diagnose: "Wo kann ich einen Test machen?"
+  verunsicherter_buerger:
+    "Fragen zum Umgang mit der aktuellen Situation. Ziel ist es, Informationsmaterial an die Hand zu geben und zu beruhigen.\nThemen: Frustration, Unsicherheit, familiäre Konflikte, Lebensmittelversorgung / Hamsterkäufe, Möglichkeiten für soziales Engagement, Aufenthalt in der Öffentlichkeit / Ausgangssperre.",
+  gastro_betrieb:
+    "Fragen zu aktuellen Vorschriften im Bezug auf Gastronomie-Einrichtungen. Welche Regeln gelten für Restaurants, Imbissbuden und Lieferdienste?",
+  corona_diagnose:
+    "Fragen, die mögliche Ansteckungssituationen, Symptome und Handlungsempfehlungen im Falle einer Erkrankung betreffen."
 };
 
 export default {
