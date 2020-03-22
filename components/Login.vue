@@ -56,7 +56,7 @@ export default {
           window.location.reload(true);
         }
       } catch (err) {
-        console.log("login – err: ", err);
+        console.warn("login – Error: ", err);
         this.error = "Could not login: " + err;
       }
     }
