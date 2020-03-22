@@ -46,11 +46,9 @@ export default {
         const items = {};
         const answers = {};
 
-        res.data
-          .filter(item => item.channel.key === "test-website-1") //DEBUG filtering is debug only!
-          .forEach(item => {
-            answers[item.question_id] = item.answer_text;
-          });
+        res.data.forEach(item => {
+          answers[item.question_id] = item.answer_text;
+        });
 
         Object.keys(questions).forEach(qid => {
           items[qid] = {
