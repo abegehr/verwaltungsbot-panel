@@ -5,7 +5,12 @@
     </div>
     <div class="level-right column flex-end">
       <b-field horizontal label="Antwort">
-        <b-input style="flex-grow: 1;" type="textarea" v-model="answer" />
+        <b-input
+          style="flex-grow: 1;"
+          type="textarea"
+          v-model="answer"
+          :disabled="!editing"
+        />
       </b-field>
       <b-button @click="click">{{ editing ? "Save" : "Edit" }}</b-button>
     </div>
