@@ -72,10 +72,10 @@ export default {
         });
 
         this.items = items;
-        this.loading = false;
       } catch (err) {
         console.log("fetchItems – Error: ", err);
       }
+      this.loading = false;
     }
   }
 };
