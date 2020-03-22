@@ -12,9 +12,11 @@
           :disabled="!editing"
         />
       </b-field>
-      <b-button class="is-pulled-right" @click="click">{{
-        editing ? "Save" : "Edit"
-      }}</b-button>
+      <div>
+        <b-button class="is-pulled-right" @click="click">{{
+          !editing ? "Edit" : "Save"
+        }}</b-button>
+      </div>
     </div>
   </div>
 </template>
