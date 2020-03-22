@@ -60,10 +60,12 @@ module.exports = {
             method: "post",
             propertyName: "jwt"
           },
-          tokenRequired: true,
-          tokenType: "bearer",
-          autoFetchUser: false
-        }
+          logout: false,
+          user: false
+        },
+        tokenRequired: true,
+        tokenType: "bearer",
+        autoFetchUser: false
       }
     }
   },
