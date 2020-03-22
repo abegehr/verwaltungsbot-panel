@@ -23,17 +23,17 @@ export default {
     return {
       items: [
         {
-          id: 1,
+          id: "1",
           question: "Was bedeutet häusliche Quarantäne?",
           answer: "HEy1"
         },
         {
-          id: 2,
+          id: "2",
           question: "Woran erkenne ich Corona?",
           answer: "HEy2"
         },
         {
-          id: 2,
+          id: "3",
           question: "Wo kann ich einen Test machen?",
           answer: "HEy3"
         }
