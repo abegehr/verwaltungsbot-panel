@@ -47,10 +47,14 @@ export default {
     async userLogin() {
       try {
         console.log("login – sent: ", this.login);
-        let response = await this.$auth.loginWith("local", {
+        let res = await this.$auth.loginWith("local", {
           data: this.login
         });
-        console.log("login – res: ", response);
+        console.log("login – res: ", res);
+        if (res.status === 200) {
+          console.log("login – logged in successfully.");
+          window.location.reload(true);
+        }
       } catch (err) {
         console.log("login – err: ", err);
         this.error = "Could not login: " + err;
