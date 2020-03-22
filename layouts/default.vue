@@ -1,36 +1,22 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="/">#WirVsVirus Verwaltungsbot Panel</a>
+    <b-navbar class="is-primary">
+      <template slot="brand">
+        <b-navbar-item tag="router-link" :to="{ path: '/' }">
+          <h2>#WirVsVirus Verwaltungsbot Panel</h2>
+        </b-navbar-item>
+      </template>
 
-        <a
-          role="button"
-          class="navbar-burger burger"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarMEnu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
-
-      <div id="navbarMenu" class="navbar-menu">
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <b-button v-if="$auth.loggedIn" @click="userLogout"
-              >Logout</b-button
-            >
+      <template slot="end">
+        <b-navbar-item tag="div">
+          <div class="buttons">
+            <b-button v-if="$auth.loggedIn" @click="userLogout">
+              Logout
+            </b-button>
           </div>
-        </div>
-      </div>
-    </nav>
+        </b-navbar-item>
+      </template>
+    </b-navbar>
 
     <section class="main-content columns">
       <div class="container column is-10">
