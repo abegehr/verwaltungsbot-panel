@@ -4,6 +4,7 @@
       <p>{{ question }}</p>
     </div>
     <div class="level-right column flex-end" style="flex: 2;">
+      <b-loading :active.sync="saving" />
       <b-field horizontal label="Antwort">
         <b-input type="textarea" v-model="answer_text" :disabled="!editing" />
       </b-field>
@@ -20,7 +21,7 @@
 export default {
   props: {
     id: {
-      type: String,
+      type: Number,
       required: true
     },
     qid: {
@@ -45,24 +46,26 @@ export default {
   },
   methods: {
     click: function() {
-      console.log("click – id: ", this.id);
-      console.log("answer_text: ", this.answer_text);
+      console.log("click – qid: ", this.qid);
+      if (this.editing) this.save();
       this.editing = !this.editing;
     },
     save: async function() {
       console.log("Card.save - called");
       this.saving = true;
-      if (!id) {
+      if (!this.id) {
         console.warn("Card.save – create not impl", qid);
         // https://wirvsvirus.slack.com/archives/C010GMP1G80/p1584908563060000?thread_ts=1584905639.057600&cid=C010GMP1G80
       } else {
         try {
-          const res = await this.$axios.put(`/answers/${id}`, { answer_text });
+          const res = await this.$axios.put(`/answers/${this.id}`, {
+            answer_text: this.answer_text
+          });
           console.log("Card.save – res: ", res);
-          this.saving = false;
         } catch (err) {
           console.log("Card.save – Error: ", err);
         }
+        this.saving = false;
       }
     }
   }
