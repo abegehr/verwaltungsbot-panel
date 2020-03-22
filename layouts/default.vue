@@ -1,21 +1,8 @@
 <template>
   <div>
-    <nav
-      class="navbar header has-shadow is-primary"
-      role="navigation"
-      aria-label="main navigation"
-    >
+    <nav class="navbar header has-shadow is-primary" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a
-          class="navbar-item"
-          href="/"
-        >
-          <img
-            src="~assets/buefy.png"
-            alt="Buefy"
-            height="28"
-          >
-        </a>
+        <a class="navbar-item" href="/">#WirVsVirus Verwaltungsbot Panel</a>
 
         <div class="navbar-burger">
           <span />
@@ -54,21 +41,21 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       items: [
         {
-          title: 'Home',
-          icon: 'home',
-          to: { name: 'index' }
+          title: "Home",
+          icon: "home",
+          to: { name: "index" }
         },
         {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
+          title: "Inspire",
+          icon: "lightbulb",
+          to: { name: "inspire" }
         }
       ]
-    }
+    };
   }
-}
+};
 </script>
